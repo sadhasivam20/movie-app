@@ -31,6 +31,7 @@ export function AddMovie({ movieList, setMovieList }) {
       <TextField id="outlined-basic" label="Rating" variant="outlined" onChange={(event) => setRating(event.target.value)} />
 
       <TextField id="outlined-basic" label="Summary" variant="outlined" onChange={(event) => setSummary(event.target.value)} />
+      
       <Button variant="contained" onClick={addMovie}>ADD MOVIE</Button>
     </div>
   );

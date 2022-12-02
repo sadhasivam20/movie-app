@@ -89,8 +89,8 @@ function App() {
 
   return (
     <div className='App'>
-  {/* <MovieList /> */}
-  {/* <AddColor/> */}
+ 
+
   <ul>
   <li><Link to="/">HOME</Link></li>
   <li> <Link to="/movies">MOVIES</Link></li>

@@ -6,11 +6,13 @@ import { AddMovie } from './AddMovie';
 export function MovieList({movieList}) {
 
   return (
-   <div>
-      <AddMovie movieList={movieList}  />
+   <div movieList={movieList}>
+      {/* <AddMovie movieList={movieList}  /> */}
 <div className="movie-list">
       {movieList.map((mv,index) => (
-        <Movie key={index} movie={mv} />
+        <div key={index} >
+        <Movie movie={mv} id={index}  />
+        </div>
       ))}
     </div>
     </div>
