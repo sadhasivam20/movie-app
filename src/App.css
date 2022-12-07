@@ -17,8 +17,8 @@
 }
 
 .movie-container {
- 
   width: 340px;
+  height: min-content;
 }
 
 /* RAM */
@@ -48,3 +48,10 @@
  text-alig: center;
 } 
   */
+.movie-detail-container{
+  max-width: 750px;
+  padding: 16px;
+}
+.home{
+  text-align: center;
+}
