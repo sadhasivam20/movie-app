@@ -1,17 +1,44 @@
 import React from 'react';
 import { Movie } from "./Movie";
+import  { useEffect } from 'react';
+// import { AddMovie } from './AddMovie';
+import { useState } from "react";
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-import { AddMovie } from './AddMovie';
+export function MovieList() {
+  const [movieList,setMovieList] = useState( []);
+   const getMovies=()=>{
 
-export function MovieList({movieList}) {
+      fetch("https://638e229daefc455fb2b60cfe.mockapi.io/movies")
+    .then(data=>data.json())
+    .then(mvs=>setMovieList(mvs));
+  };
+   
+useEffect(()=>getMovies(),[]);
+
+const deleteMovie=(id)=>{
+  fetch(`https://638e229daefc455fb2b60cfe.mockapi.io/movies/${id}`,{
+    method:"DELETE",
+  }).then((data)=>getMovies());
+};
 
   return (
    <div movieList={movieList}>
       {/* <AddMovie movieList={movieList}  /> */}
 <div className="movie-list">
-      {movieList.map((mv,index) => (
-        <div key={index} >
-        <Movie movie={mv} id={index}  />
+      {movieList.map((mv) => (
+        <div key={mv.id} >
+        <Movie movie={mv} id={mv.id}  
+     
+        deleteButton= {
+        <IconButton 
+        sx={{ marginLeft:"auto"}} 
+        onClick={()=> deleteMovie(mv.id)}aria-label="delete" size="large"
+        color='error' >
+        <DeleteIcon/>
+      </IconButton >}
+        />
         </div>
       ))}
     </div>
