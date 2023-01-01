@@ -11,7 +11,7 @@ export function BasicForm() {
       email:" ",
       password:" ",
         },
-        validationSchema:movieValidationSchema,
+       validationSchema:movieValidationSchema,
         onSubmit:(values)=>{
           console.log("form values:",values);
         }
