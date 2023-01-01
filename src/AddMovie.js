@@ -7,11 +7,11 @@ import {useFormik} from "formik";
 import * as  yup from 'yup';
 
 const movieValidationSchema=yup.object({
-      name:yup.string().required(),
-      poster:yup.string().required().min(4),
-      rating:yup.number().required().min(0).max(10),
-      summary:yup.string().required().min(20),
-      trailer:yup.string().required().min(4),
+      name:yup.string().required().min(10,"fill enter the name"),
+      poster:yup.string().required().min(4,"please fill the poster"),
+      rating:yup.number().required().min(0,"please fill the rating ").max(10),
+      summary:yup.string().required().min(20,"please fill the summary atleast 20 character "),
+      trailer:yup.string().required().min(4,"please upload the crct URL"),
 })
 export function AddMovie({ movieList, setMovieList }) {
   // const [name, setName] = useState(" ");
