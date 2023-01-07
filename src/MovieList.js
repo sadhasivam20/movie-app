@@ -28,8 +28,8 @@ const deleteMovie=(id)=>{
       {/* <AddMovie movieList={movieList}  /> */}
 <div className="movie-list">
       {movieList.map((mv) => (
-        <div key={mv.id} >
-        <Movie movie={mv} id={mv.id}  
+        <div key={mv._id} >
+        <Movie movie={mv} id={mv._id}  
      
         deleteButton= {
         <IconButton 
